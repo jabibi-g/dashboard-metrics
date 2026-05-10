@@ -16,7 +16,7 @@ export function KPICard({ stat }: KPICardProps) {
     stat.unit === 'min' || stat.unit === 'days' || stat.unit === 'hours' ? 1 : 0;
 
   return (
-    <div className={`kpi-card ${isAlert ? 'alert' : ''}`} title={stat.description ?? ''}>
+    <div className={`kpi-card ${isAlert ? 'alert' : ''}`} title={stat.label}>
       <span className="kpi-label">{stat.label}</span>
 
       <div>

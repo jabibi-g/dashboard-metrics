@@ -40,7 +40,7 @@ export function FunnelPanel({ funnel, totals }: FunnelPanelProps) {
         {STAGES.map((stage, i) => {
           const value = totals[stage.key] ?? 0;
           const pct = (value / maxVal) * 100;
-          const rateKey = RATE_KEYS[i] as keyof typeof RATE_LABELS | undefined;
+          const rateKey = RATE_KEYS[i] as keyof FunnelRates | undefined;
 
           return (
             <div key={stage.key}>

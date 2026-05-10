@@ -81,10 +81,13 @@ export function MetricChart({ days, metricsMeta, activeKey, onKeyChange }: Metri
               tickFormatter={(v: number) => v >= 1000 ? `${(v / 1000).toFixed(1)}k` : String(v)}
             />
             <Tooltip
-              formatter={(value: number | null) => [
-                value !== null ? `${value} ${meta?.unit ?? ''}` : '—',
-                meta?.label ?? activeKey,
-              ]}
+              formatter={(value) => {
+                const v = value as number | null;
+                return [
+                  v !== null && v !== undefined ? `${v} ${meta?.unit ?? ''}` : '—',
+                  meta?.label ?? activeKey,
+                ] as [string, string];
+              }}
               labelFormatter={(label: string) => fmtDate(label)}
               contentStyle={{
                 background: 'var(--bg-elevated)',
