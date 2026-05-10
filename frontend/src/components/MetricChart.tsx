@@ -2,12 +2,22 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, ReferenceLine,
 } from 'recharts';
-import type { DayEntry, MetricMeta } from '../interfaces/metrics';
+import type { DayEntry, Direction } from '../interfaces/metrics';
 import { fmtDate } from '../utils/format';
+
+// Structural type — only requires the fields this component actually uses.
+// Compatible with both MetricMeta[] and MetricStats[] from the summary endpoint.
+type ChartMetricEntry = {
+  key: string;
+  label: string;
+  unit: string;
+  direction: Direction;
+  description?: string;
+};
 
 interface MetricChartProps {
   days: DayEntry[];
-  metricsMeta: MetricMeta[];
+  metricsMeta: ChartMetricEntry[];
   activeKey: string;
   onKeyChange: (key: string) => void;
 }

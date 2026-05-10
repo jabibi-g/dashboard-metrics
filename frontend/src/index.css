@@ -427,3 +427,123 @@ h3 { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-t
   fill: var(--text-muted) !important;
   font-size: 11px !important;
 }
+
+/* ── Insight Panel ────────────────────────────────────────────────────────────── */
+.insight-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.insight-panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.insight-panel-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 10px;
+}
+
+.insight-panel-period {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.insight-panel-summary {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.insight-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Individual insight row ── */
+.insight-row {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+.insight-row:last-child { border-bottom: none; }
+.insight-row:hover { background: var(--bg-elevated); }
+
+/* Left severity bar — 3px colored strip */
+.insight-severity-bar {
+  width: 3px;
+  flex-shrink: 0;
+  border-radius: 0;
+}
+.insight-severity-bar--critical { background: var(--danger); }
+.insight-severity-bar--warning  { background: var(--warning); }
+.insight-severity-bar--positive { background: var(--success); }
+.insight-severity-bar--stable   { background: var(--border-strong); }
+
+.insight-row-body {
+  flex: 1;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.insight-row-top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.insight-metric-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  min-width: 160px;
+}
+
+.insight-metric-value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.insight-context-pct {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.insight-badge {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.insight-badge--critical { background: var(--danger-bg);  color: var(--danger);  }
+.insight-badge--warning  { background: var(--warning-bg); color: var(--warning); }
+.insight-badge--positive { background: var(--success-bg); color: var(--success); }
+.insight-badge--stable   { background: rgba(100,116,139,0.12); color: var(--neutral); }
+
+.insight-business-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+

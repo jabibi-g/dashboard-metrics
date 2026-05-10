@@ -3,6 +3,7 @@ import { DatasetSelector } from '../components/DatasetSelector';
 import { KPICard } from '../components/KPICard';
 import { FunnelPanel } from '../components/FunnelPanel';
 import { MetricChart } from '../components/MetricChart';
+import { InsightPanel } from '../components/InsightPanel';
 import { useDatasets } from '../hooks/useDatasets';
 import { useSummary } from '../hooks/useSummary';
 import { useDays } from '../hooks/useDays';
@@ -53,7 +54,7 @@ export function Dashboard() {
       <header className="header">
         <div className="header-brand">
           <div className="logo-dot" />
-          <h1>Palvi Dashboard</h1>
+          <h1>Dashboard</h1>
         </div>
 
         <div className="header-right">
@@ -100,6 +101,12 @@ export function Dashboard() {
                 ))}
               </div>
             </section>
+
+            {/* ── Weekly insight summary ── */}
+            <InsightPanel
+              metrics={summary.metrics}
+              periodLabel={`Últimos 7 días · ${summary.period.from} — ${summary.period.to}`}
+            />
 
             {/* ── Funnel + Chart ── */}
             <section className="charts-row">
