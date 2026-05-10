@@ -1,0 +1,6 @@
+/.idea/
+task.pdf
+
+backend/.env
+backend/node_modules/
+
