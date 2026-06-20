@@ -9,7 +9,7 @@ import {
   MetricStats,
   FunnelRates,
   MetricSeries,
-} from '../interfaces/metrics.interface';
+} from '../interfaces/metrics';
 
 class MetricsService {
   private data: RawMetricsFile | null = null;

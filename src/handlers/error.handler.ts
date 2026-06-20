@@ -11,6 +11,7 @@ export class AppError extends Error {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+// @ts-ignore: Express error handlers need 4 parameters
 export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {
   const statusCode = err instanceof AppError ? err.statusCode : 500;
   const message =

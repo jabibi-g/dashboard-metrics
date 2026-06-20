@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { metricsApi } from '../services/metrics.service';
+import { metricsApi } from '../services/api.service';
 import type { DatasetSummary } from '../interfaces/metrics';
 
 export function useSummary(dataset: string, from?: string, to?: string) {

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { metricsApi } from '../services/metrics.service';
+import { metricsApi } from '../services/api.service';
 import type { DayEntry } from '../interfaces/metrics';
 
 export function useDays(dataset: string, from?: string, to?: string) {

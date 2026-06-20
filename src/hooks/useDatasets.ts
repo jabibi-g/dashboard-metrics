@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { metricsApi } from '../services/metrics.service';
+import { metricsApi } from '../services/api.service';
 
 export function useDatasets() {
   const [datasets, setDatasets] = useState<string[]>([]);
