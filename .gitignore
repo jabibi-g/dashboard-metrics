@@ -2,4 +2,11 @@
 task.pdf
 qodana.yaml
 
+<<<<<<< HEAD
 node_modules/
+=======
+backend/node_modules/
+node_modules/
+.vite/
+frontend/node_modules/
+>>>>>>> fa20fa857d45d0225c113573a290d76e896a7952
