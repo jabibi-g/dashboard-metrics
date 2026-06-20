@@ -11,6 +11,29 @@ npm run dev
 
 ---
 
+## Tecnologías utilizadas (Tech Stack)
+
+### Frontend
+- **React (v18)**: Librería principal para la interfaz de usuario.
+- **Vite (v6)**: Herramienta de compilación y servidor de desarrollo ultrarrápido.
+- **TypeScript**: Tipado estático para mayor seguridad y robustez.
+- **Recharts**: Biblioteca declarativa basada en componentes de React para la creación de gráficos.
+- **Date-fns**: Utilidades para el manejo y formateo de fechas.
+- **Vanilla CSS**: Estilos nativos utilizando *custom properties* (variables CSS).
+
+### Backend
+- **Node.js**: Entorno de ejecución.
+- **Express.js (v5)**: Framework web minimalista para la API REST.
+- **TypeScript**: Compartiendo interfaces directamente con el frontend.
+- **Middlewares de seguridad y rendimiento**: `helmet`, `cors`, `compression`, `express-rate-limit` y `morgan`.
+- **ts-node-dev**: Servidor de desarrollo con recarga en vivo para TypeScript.
+
+### Arquitectura y Herramientas
+- **Monolito unificado**: Código de cliente y servidor integrados en un único directorio `src/`.
+- **Concurrently**: Herramienta para ejecutar los servidores de desarrollo de backend y frontend simultáneamente con un solo comando (`npm run dev`).
+
+---
+
 ## 1. Decisiones técnicas
 
 **Express.js**: Se descartaron frameworks más completos por no aportar nada a un problema de pura lectura. Middleware seleccionado con el mismo criterio: `compression` reduce los 668 KB del dataset a ~80 KB en tránsito; `helmet`, `morgan` y `express-rate-limit` cubren seguridad y observabilidad sin infraestructura adicional.
