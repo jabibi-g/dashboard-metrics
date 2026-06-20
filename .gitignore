@@ -3,5 +3,6 @@ task.pdf
 qodana.yaml
 
 backend/node_modules/
-
+node_modules/
+.vite/
 frontend/node_modules/
