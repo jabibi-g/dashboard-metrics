@@ -3,8 +3,10 @@
 Permite a un Jefe de Ventas revisar en ~5 minutos el estado de su pipeline y navegar entre cuatro escenarios de datos (A, B, C, D).
 
 ```bash
-cd backend  && npm install && npm run dev   # http://localhost:3001
-cd frontend && npm install && npm run dev   # http://localhost:5173
+npm install
+npm run dev
+# El backend correrá en http://localhost:3001
+# El frontend correrá en http://localhost:5173 (o el siguiente puerto disponible)
 ```
 
 ---
@@ -15,7 +17,7 @@ cd frontend && npm install && npm run dev   # http://localhost:5173
 
 **Vite**: El frontend llama a `/api` sin configurar CORS en desarrollo. **Recharts** sobre Chart.js o D3 por ser declarativo y nativo en React. **Vanilla CSS con custom properties** mantiene la consistencia visual sin dependencias externas. Sin librería de estado global: el estado de la app son dos variables que `useState` maneja sin necesidad de Zustand ni Redux.
 
-**Estructura de directorios por responsabilidad**: Tanto backend como frontend comparten las mismas capas (`config/`, `interfaces/`, `services/`, `controllers|hooks/`, `handlers|utils/`, `routes|pages/`). La ventaja es predictibilidad: un bug en la capa HTTP se busca en `controllers/`; uno en los datos, en `services/`. El frontend espeja la estructura del backend para reducir la fricción al navegar entre ambos.
+**Arquitectura unificada (Monolito)**: Originalmente divididos en dos sub-proyectos, el backend y frontend han sido unificados en un solo directorio raíz y una única carpeta `src/`. Al tratarse de un proyecto pequeño, esto elimina la duplicación de código (compartiendo directamente las interfaces de TypeScript), centraliza la gestión de dependencias en un único `package.json` y facilita la experiencia de desarrollo, permitiendo compilar y ejecutar ambas partes simultáneamente mediante `concurrently`.
 
 **Stale-while-revalidate y panel de resumen**: Al cambiar de dataset, los hooks mantienen los datos anteriores visibles mientras llega la respuesta nueva. El panel de resumen semanal (`utils/insights.ts`) es una función pura que clasifica métricas por severidad y genera observaciones de negocio ordenadas por prioridad.
 
