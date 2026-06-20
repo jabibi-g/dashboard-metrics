@@ -11,7 +11,7 @@ npm run dev
 
 ---
 
-## Tecnologías utilizadas (Tech Stack)
+## Tecnologías utilizadas
 
 ### Frontend
 - **React (v18)**: Librería principal para la interfaz de usuario.
